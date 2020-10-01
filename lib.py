@@ -1,12 +1,11 @@
 from collections import namedtuple
 import struct
-import numpy
 
 # ===============================================================
 # Paula Camila Gonzalez Ortega - 18398
 # ===============================================================
 
-class V3(object):
+"""class V3(object):
   def __init__(self, x, y = None, z = None):
     if (type(x) == numpy.matrix):
       self.x, self.y, self.z = x.tolist()[0]
@@ -27,8 +26,10 @@ class V2(object):
       self.y = y
 
   def __repr__(self):
-    return "V2(%s, %s)" % (self.x, self.y)
+    return "V2(%s, %s)" % (self.x, self.y)"""
 
+V2 = namedtuple('Vertex2', ['x', 'y'])
+V3 = namedtuple('Vertex3', ['x', 'y', 'z'])
 
 def sum(v0, v1):
   # suma dos vectores de 3 elementos 

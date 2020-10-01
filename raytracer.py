@@ -1,7 +1,10 @@
 from lib import *
-from sphere import *
-from math import pi, tan
 from rayUtils import *
+from sphere import *
+from plane import *
+from cube import *
+from envmap import *
+from math import pi, tan
 
 BLACK = color(0, 0, 0)
 WHITE = color(255, 255, 255)
@@ -16,6 +19,7 @@ class Raytracer(object):
     self.background_color = BLACK
     self.light = None
     self.scene = []
+    self.envMap = None
     self.clear()
 
   def clear(self):
@@ -57,6 +61,9 @@ class Raytracer(object):
     material, intersect = self.scene_intersect(orig, direction)
 
     if material is None or recursion >= MAX_RECURSION_DEPTH:  # break recursion of reflections after n iterations
+      if self.envMap:
+        #si hay imagen bitmap de background se obtiene el color
+        return self.envMap.get_color(direction)
       return self.background_color
 
     offset_normal = mul(intersect.normal, 1.1)
@@ -128,20 +135,25 @@ class Raytracer(object):
         self.pixels[y][x] = color(r, g, b)"""
 
 
-r = Raytracer(1000, 1000)
-
+#r = Raytracer(1000, 1000)
+r = Raytracer(1200, 900)
+r.envMap = Envmap('bosque.bmp')
 r.light = Light(
   position=V3(0, 0, 20),
   intensity=1.5
 )
 
-r.background_color = FONDO
-
+#r.background_color = FONDO
 
 r.scene = [
+  Sphere(V3(0, 0, -10), 1.5, ivory),
+  Cube(V3(0, 3, -10), 2, rubber)
+]
+"""r.scene = [
   Sphere(V3(0, -1.5, -10), 1.5, ivory),
   Sphere(V3(0, 0, -5), 0.5, glass),
   Sphere(V3(1, 1, -8), 1.7, rubber),
-  Sphere(V3(-3, 3, -10), 2, mirror)
-]
+  Sphere(V3(-3, 3, -10), 2, mirror),
+  Plane(-2, rubber),
+]"""
 r.display()
