@@ -153,7 +153,9 @@ r.scene = [
   #Cube(V3(0, -2, -10), 2.5, coffee),
   #Cube(V3(0, 0, -10), 2, coffee),
   Cube(V3(3.5, -2, -12), 4, gray),
-  Pyramid([V3(1, 0, -10), V3(2, 2, -5), V3(5.5, 0, -10), V3(1, 0, -7.5)], graylight)
+  Sphere(V3(2.3, -1, -9 ), 0.5, mirror),
+  Sphere(V3(4, -1, -9 ), 0.5, mirror),
+  Pyramid([V3(2, 0, -10), V3(1.5, 2, -5), V3(5.5, 0, -10), V3(1, 0, -7.5)], graylight)
   #Cube(V3(0, 2, -10), 1.7, coffee),
   #MONTANIAS derecha frente - punta - izquierda frente - derecha atras
   #Pyramid([V3(0, 1, -10), V3(-2.5, 3.5, -5), V3(-10, 1, -10), V3(-2, 1, -7.5)], gray),
