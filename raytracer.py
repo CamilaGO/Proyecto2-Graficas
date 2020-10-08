@@ -138,7 +138,7 @@ class Raytracer(object):
 
 r = Raytracer(1920, 1080)
 #r = Raytracer(1200, 900)
-r.envMap = Envmap('lake.bmp')
+r.envMap = Envmap('bosque.bmp')
 r.light = Light(
   position=V3(0, 0, 20),
   intensity=1.5
@@ -148,8 +148,16 @@ r.light = Light(
 
 r.scene = [
   #Sphere(V3(0, 0, -10), 1.5, ivory),
-  Cube(V3(0, 0, -10), 2.5, rubber)
-  #Pyramid([V3(1, -2, -10), V3(-1, 2, -5), V3(-5, -2, -10), V3(-0.0, -1, -7.5)], rubber)
+  #puente
+  #Cube(V3(4, -4, -10), 3, coffee),
+  #Cube(V3(0, -2, -10), 2.5, coffee),
+  #Cube(V3(0, 0, -10), 2, coffee),
+  Cube(V3(3.5, -2, -12), 4, gray),
+  Pyramid([V3(1, 0, -10), V3(2, 2, -5), V3(5.5, 0, -10), V3(1, 0, -7.5)], graylight)
+  #Cube(V3(0, 2, -10), 1.7, coffee),
+  #MONTANIAS derecha frente - punta - izquierda frente - derecha atras
+  #Pyramid([V3(0, 1, -10), V3(-2.5, 3.5, -5), V3(-10, 1, -10), V3(-2, 1, -7.5)], gray),
+  #Pyramid([V3(4.5, 1.5, -10), V3(3.5, 4, -5), V3(12, 2, -10), V3(3, 1.5, -7.5)], gray)
 ]
 """r.scene = [
   Sphere(V3(0, -1.5, -10), 1.5, ivory),
