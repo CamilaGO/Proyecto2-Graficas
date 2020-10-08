@@ -3,6 +3,7 @@ from rayUtils import *
 from sphere import *
 from plane import *
 from cube import *
+from pyramid import *
 from envmap import *
 from math import pi, tan
 
@@ -31,7 +32,7 @@ class Raytracer(object):
   def write(self, filename):
     writebmp(filename, self.width, self.height, self.pixels)
 
-  def display(self, filename='out.bmp'):
+  def display(self, filename='outtri.bmp'):
     self.render()
     self.write(filename)
 
@@ -135,9 +136,9 @@ class Raytracer(object):
         self.pixels[y][x] = color(r, g, b)"""
 
 
-#r = Raytracer(1000, 1000)
-r = Raytracer(1200, 900)
-r.envMap = Envmap('bosque.bmp')
+r = Raytracer(1920, 1080)
+#r = Raytracer(1200, 900)
+r.envMap = Envmap('lake.bmp')
 r.light = Light(
   position=V3(0, 0, 20),
   intensity=1.5
@@ -146,8 +147,9 @@ r.light = Light(
 #r.background_color = FONDO
 
 r.scene = [
-  Sphere(V3(0, 0, -10), 1.5, ivory),
-  Cube(V3(0, 3, -10), 2, rubber)
+  #Sphere(V3(0, 0, -10), 1.5, ivory),
+  Cube(V3(0, 0, -10), 2.5, rubber)
+  #Pyramid([V3(1, -2, -10), V3(-1, 2, -5), V3(-5, -2, -10), V3(-0.0, -1, -7.5)], rubber)
 ]
 """r.scene = [
   Sphere(V3(0, -1.5, -10), 1.5, ivory),
@@ -155,5 +157,7 @@ r.scene = [
   Sphere(V3(1, 1, -8), 1.7, rubber),
   Sphere(V3(-3, 3, -10), 2, mirror),
   Plane(-2, rubber),
-]"""
+]
+Pyramid([(1, -2, -10), (-1, 2, -5), (-5, -2, -10), (-0.0, -1, -7.5)
+"""
 r.display()
