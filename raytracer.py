@@ -147,19 +147,20 @@ r.light = Light(
 #r.background_color = FONDO
 
 r.scene = [
-  #Sphere(V3(0, 0, -10), 1.5, ivory),
-  #puente
-  #Cube(V3(4, -4, -10), 3, coffee),
-  #Cube(V3(0, -2, -10), 2.5, coffee),
-  #Cube(V3(0, 0, -10), 2, coffee),
+  #cabana
   Cube(V3(3.5, -2, -12), 4, gray),
   Sphere(V3(2.3, -1, -9 ), 0.5, mirror),
   Sphere(V3(4, -1, -9 ), 0.5, mirror),
-  Pyramid([V3(2, 0, -10), V3(1.5, 2, -5), V3(5.5, 0, -10), V3(1, 0, -7.5)], graylight)
-  #Cube(V3(0, 2, -10), 1.7, coffee),
-  #MONTANIAS derecha frente - punta - izquierda frente - derecha atras
-  #Pyramid([V3(0, 1, -10), V3(-2.5, 3.5, -5), V3(-10, 1, -10), V3(-2, 1, -7.5)], gray),
-  #Pyramid([V3(4.5, 1.5, -10), V3(3.5, 4, -5), V3(12, 2, -10), V3(3, 1.5, -7.5)], gray)
+  Cube(V3(3.3, -2.8, -10), 1.5, coffee),
+  Cube(V3(3.3, -3.2, -10), 1.5, coffee),
+  Pyramid([V3(2, 0, -10), V3(1.5, 2, -5), V3(5.5, 0, -10), V3(1, 0, -7.5)], graylight),
+  #arboles
+  Pyramid([V3(-6, -2, -10), V3(-4, 2, -5), V3(-10, -2, -10), V3(-8, 1, -7.5)], green),
+  Cube(V3(-7, -2, -9), 1, coffee),
+  Cube(V3(-7, -3, -9), 1, coffee),
+  Pyramid([V3(-1, -1, -10), V3(-1.5, 3, -5), V3(-5, -1.2, -10), V3(-3, 0, -7.5)], green),
+  Cube(V3(-2.7, -1.4, -9), 1, coffee),
+  Cube(V3(-2.7, -2, -9), 1, coffee),
 ]
 """r.scene = [
   Sphere(V3(0, -1.5, -10), 1.5, ivory),

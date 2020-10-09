@@ -32,3 +32,4 @@ graylight = Material(diffuse=color(184, 182, 179), albedo=(0.6, 0.3, 0, 0, 0), s
 coffee = Material(diffuse=color(71, 51, 10), albedo=(0.6,  0.3, 0, 0, 0), spec=10)
 mirror = Material(diffuse=color(255, 255, 255), albedo=(0, 10, 0.8, 0), spec=1425)
 glass = Material(diffuse=color(150, 180, 200), albedo=(0, 0.5, 0.1, 0.8), spec=125, refractive_index=1.5)
+green = Material(diffuse=color(28, 110, 47), albedo=(0.9,  0.9, 0, 0), spec=10)
