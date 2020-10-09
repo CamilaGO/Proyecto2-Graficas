@@ -32,7 +32,7 @@ class Raytracer(object):
   def write(self, filename):
     writebmp(filename, self.width, self.height, self.pixels)
 
-  def display(self, filename='outtri.bmp'):
+  def display(self, filename='out.bmp'):
     self.render()
     self.write(filename)
 
@@ -161,6 +161,8 @@ r.scene = [
   Pyramid([V3(-1, -1, -10), V3(-1.5, 3, -5), V3(-5, -1.2, -10), V3(-3, 0, -7.5)], green),
   Cube(V3(-2.7, -1.4, -9), 1, coffee),
   Cube(V3(-2.7, -2, -9), 1, coffee),
+  #sol
+  Sphere(V3(10, 5, -13 ), 3, sun),
 ]
 """r.scene = [
   Sphere(V3(0, -1.5, -10), 1.5, ivory),
